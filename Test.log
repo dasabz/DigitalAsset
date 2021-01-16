@@ -1,0 +1,22 @@
+2021-01-16 15:45:12 WARN  SimpleMovingAverageCalculator:14 - X mins has not passed yet, so cannot compute moving average
+2021-01-16 15:45:12 INFO  SimpleMovingAverageTradingStrategy:70 - Index=1 Enter Buy order common.Order{side=Buy, price=2.0, quantity=10.0, time='t2'} lastMMinsSMA=2.5 lastNMinsSMA=2.0
+2021-01-16 15:45:12 INFO  SimpleMovingAverageTradingStrategy:59 - Index=3 Enter Sell order common.Order{side=Sell, price=4.0, quantity=10.0, time='t4'} lastMMinsSMA=2.5 lastNMinsSMA=4.0
+2021-01-16 15:45:12 INFO  TradesManager:51 - Generating trade Trade{tradeNumber=0, side=Sell, sellQty=10.0, buyQty=10.0, sellPrice=4.0, buyPrice=2.0, pnlForTrade=20.0} originalPnl=20.0 pnlAfterFees=19.98 cumulativePnlAfterFees=1019.98
+log4j: reset attribute= "false".
+log4j: Threshold ="null".
+log4j: Level value for root is  [debug].
+log4j: root level set to DEBUG
+log4j:ERROR No appender named [console] could be found.
+log4j: Appender named [console] not found.
+log4j: Class name: [org.apache.log4j.RollingFileAppender]
+log4j: Setting property [file] to [Test.log].
+log4j: Parsing layout of class: "org.apache.log4j.PatternLayout"
+log4j: Setting property [conversionPattern] to [%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n].
+log4j: setFile called: Test.log, true
+log4j: setFile ended
+log4j: Adding appender named [fileAppender] to category [root].
+2021-01-16 15:45:25 WARN  SimpleMovingAverageCalculator:14 - X mins has not passed yet, so cannot compute moving average
+2021-01-16 15:45:25 INFO  SimpleMovingAverageTradingStrategy:70 - Index=1 Enter Buy order common.Order{side=Buy, price=2.0, quantity=10.0, time='t2'} lastMMinsSMA=2.5 lastNMinsSMA=2.0
+2021-01-16 15:45:25 INFO  SimpleMovingAverageTradingStrategy:59 - Index=3 Enter Sell order common.Order{side=Sell, price=4.0, quantity=10.0, time='t4'} lastMMinsSMA=2.5 lastNMinsSMA=4.0
+2021-01-16 15:45:25 INFO  TradesManager:51 - Generating trade Trade{tradeNumber=0, side=Sell, sellQty=10.0, buyQty=10.0, sellPrice=4.0, buyPrice=2.0, pnlForTrade=20.0} originalPnl=20.0 pnlAfterFees=19.98 cumulativePnlAfterFees=1019.98
+2021-01-16 15:45:25 WARN  SimpleMovingAverageCalculator:14 - X mins has not passed yet, so cannot compute moving average
