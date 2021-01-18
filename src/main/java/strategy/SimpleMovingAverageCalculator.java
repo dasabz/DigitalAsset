@@ -5,7 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-
+/*
+    Calculates the moving average
+ */
 public class SimpleMovingAverageCalculator implements MovingAverageCalculator {
     private final static Logger logger = LoggerFactory.getLogger(String.valueOf(SimpleMovingAverageCalculator.class));
 

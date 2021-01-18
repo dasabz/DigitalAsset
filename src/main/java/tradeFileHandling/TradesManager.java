@@ -11,7 +11,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+ Is responsible for doing some pnl calculations as well as dumping the trades to a file.
+ Based on need in future we can further split this class later on into a seperate tradeFileWriter class which can be used by the tradesManager
+ */
 public class TradesManager {
     private CSVWriter csvWriter;
 

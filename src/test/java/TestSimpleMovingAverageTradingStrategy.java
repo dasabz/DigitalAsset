@@ -8,6 +8,9 @@ import util.PriceTimeMovingAverages;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+/*
+ This is more for demo, for production case i think we can add some more test cases to test for rounding cases as well
+ */
 
 public class TestSimpleMovingAverageTradingStrategy {
     SimpleMovingAverageTradingStrategy simpleMovingAverageStrategy = new SimpleMovingAverageTradingStrategy();

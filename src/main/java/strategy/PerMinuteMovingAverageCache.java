@@ -5,7 +5,9 @@ import util.PriceTimeMovingAverages;
 
 import java.util.LinkedList;
 import java.util.List;
-
+/*
+    Caches the m and n mins moving average at every interval for easier decision making of buy and sell for the SimpleMovingAverageTradingStrategy
+ */
 public class PerMinuteMovingAverageCache {
     private final SimpleMovingAverageCalculator simpleMovingAverageCalculator = new SimpleMovingAverageCalculator();
     private final List<PriceTimeMovingAverages> priceTimeMovingAverages = new LinkedList<>();

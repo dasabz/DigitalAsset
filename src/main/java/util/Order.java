@@ -3,10 +3,10 @@ package util;
 import java.util.Objects;
 
 public class Order {
-    Side side;
-    double price;
-    double quantity;
-    String time;
+    private Side side;
+    private double price;
+    private double quantity;
+    private String time;
 
     @Override
     public String toString() {

@@ -11,8 +11,10 @@ import util.Side;
 import util.Trade;
 
 import java.util.List;
-import java.util.function.BiPredicate;
 
+/*
+The main strategy which does the buy and sell based on the m and n mins moving average
+ */
 public class SimpleMovingAverageTradingStrategy implements TradingStrategy {
     private final static Logger logger = LoggerFactory.getLogger(String.valueOf(SimpleMovingAverageTradingStrategy.class));
     private final int fixedNotionalOrder = 20;
@@ -22,8 +24,12 @@ public class SimpleMovingAverageTradingStrategy implements TradingStrategy {
     private boolean outstandingBuyOrder = false;
     private double outstandingBuyOrderQty;
 
-    static boolean isLastMMinsSMAGreaterThanLastNMins(double lastMMinsSMA, double lastNMinsSMA) {
+    static boolean shouldBuy(double lastMMinsSMA, double lastNMinsSMA) {
         return Double.compare(lastMMinsSMA, lastNMinsSMA) == 1;
+    }
+
+    static boolean shouldSell(double lastMMinsSMA, double lastNMinsSMA) {
+        return Double.compare(lastMMinsSMA, lastNMinsSMA) == -1;
     }
 
     /*
@@ -35,10 +41,10 @@ public class SimpleMovingAverageTradingStrategy implements TradingStrategy {
             PriceTimeMovingAverages priceTimeMovingAverage = priceTimeMovingAverages.get(index);
             double lastMMinsSMA = priceTimeMovingAverage.getLastMMinsMovingAverage();
             double lastNMinsSMA = priceTimeMovingAverage.getLastNMinsMovingAverage();
-            if (isLastMMinsSMAGreaterThanLastNMins(lastMMinsSMA, lastNMinsSMA) && !outstandingBuyOrder) {
+            if (shouldBuy(lastMMinsSMA, lastNMinsSMA) && !outstandingBuyOrder) {
                 placeBuyOrderOfFixedNotional(Side.Buy, priceTimeMovingAverage, index);
                 outstandingBuyOrder = true;
-            } else if (outstandingBuyOrder && !isLastMMinsSMAGreaterThanLastNMins(lastMMinsSMA, lastNMinsSMA)) {
+            } else if (shouldSell(lastMMinsSMA, lastNMinsSMA) && outstandingBuyOrder) {
                 Order sellOrder = placeSellOrder(index, priceTimeMovingAverage);
                 outstandingBuyOrder = false;
                 generateTrade(sellOrder);
